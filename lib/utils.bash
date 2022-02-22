@@ -2,7 +2,6 @@
 
 set -euo pipefail
 
-# TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for awsls.
 GH_REPO="https://github.com/jckuester/awsls"
 TOOL_NAME="awsls"
 TOOL_TEST="awsls --version"
@@ -31,8 +30,6 @@ list_github_tags() {
 }
 
 list_all_versions() {
-  # TODO: Adapt this. By default we simply list the tag names from GitHub releases.
-  # Change this function if awsls has other means of determining installable versions.
   list_github_tags
 }
 
@@ -41,7 +38,6 @@ download_release() {
   version="$1"
   filename="$2"
 
-  # TODO: Adapt the release URL convention for awsls
   url="$GH_REPO/releases/download/v${version}/${TOOL_NAME}_${version}_$(get_platform)_$(get_arch).tar.gz"
 
   echo "* Downloading $TOOL_NAME release $version..."
@@ -64,7 +60,6 @@ install_version() {
     mkdir -p "$install_path"/bin
     cp "$ASDF_DOWNLOAD_PATH"/"$tool_cmd" "$install_path"/bin
 
-    # TODO: Assert awsls executable exists.
     test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
 
     echo "$TOOL_NAME $version installation was successful!"
