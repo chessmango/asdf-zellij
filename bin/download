@@ -24,4 +24,4 @@ tar -xzf "$release_file" -C "$ASDF_DOWNLOAD_PATH" --strip-components=1 || fail "
 echo tar -xzf "$release_file" -C "$ASDF_DOWNLOAD_PATH" --strip-components=1
 
 # Remove the tar.gz file since we don't need to keep it
-rm "$release_file"
+echo rm "$release_file"
