@@ -58,12 +58,13 @@ install_version() {
   fi
 
   (
+    local tool_cmd
+    tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
+
     mkdir -p "$install_path"/bin
     cp "$ASDF_DOWNLOAD_PATH"/"$tool_cmd" "$install_path"/bin
 
     # TODO: Assert awsls executable exists.
-    local tool_cmd
-    tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
     test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
 
     echo "$TOOL_NAME $version installation was successful!"
