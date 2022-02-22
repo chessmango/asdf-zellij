@@ -23,7 +23,6 @@
 
 Plugin:
 
-Pending: [#557](https://github.com/asdf-vm/asdf-plugins/pull/557)
 ```shell
 asdf plugin add awsls https://github.com/chessmango/asdf-awsls.git
 ```
