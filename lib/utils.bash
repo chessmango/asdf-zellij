@@ -42,7 +42,7 @@ download_release() {
   filename="$2"
 
   # TODO: Adapt the release URL convention for awsls
-  url="$GH_REPO/archive/v${version}.tar.gz"
+  url="$GH_REPO/releases/download/v${version}/${TOOL_NAME}_${version}_$(get_platform)_$(get_arch).tar.gz"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
@@ -72,4 +72,27 @@ install_version() {
     rm -rf "$install_path"
     fail "An error ocurred while installing $TOOL_NAME $version."
   )
+}
+
+get_platform() {
+  uname -s | tr '[:upper:]' '[:lower:]'
+}
+
+get_arch() {
+  local arch
+  arch=$(uname -m)
+  case $arch in
+  "x86_64")
+    echo "amd64"
+    ;;
+  "arm")
+    echo "armv7" # Super best effort - TODO: find useful way to split armv6/armv7 maybe
+    ;;
+  "aarch64" | "arm64")
+    echo "arm64"
+    ;;
+  *)
+    exit 1
+    ;;
+  esac
 }
