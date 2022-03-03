@@ -10,7 +10,7 @@ source "${plugin_dir}/lib/utils.bash"
 
 mkdir -p "$ASDF_DOWNLOAD_PATH"
 
-release_file="$ASDF_DOWNLOAD_PATH/${TOOL_NAME}_${ASDF_INSTALL_VERSION}_$(get_platform)_$(get_arch).tar.gz"
+release_file="$ASDF_DOWNLOAD_PATH/${TOOL_NAME}-$(get_arch)-$(get_platform).tar.gz"
 
 # Download tar.gz file to the download directory
 download_release "$ASDF_INSTALL_VERSION" "$release_file"
