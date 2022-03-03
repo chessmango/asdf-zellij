@@ -69,22 +69,19 @@ install_version() {
   )
 }
 
-get_platform() {
-  uname -s | tr '[:upper:]' '[:lower:]'
+get_arch() {
+  uname -m
 }
 
-get_arch() {
-  local arch
-  arch=$(uname -m)
-  case $arch in
-  "x86_64")
-    echo "amd64"
+get_platform() {
+  local platform
+  platform=$(uname -s | tr '[:upper:]' '[:lower:]')
+  case $platform in
+  "darwin")
+    echo "apple-darwin"
     ;;
-  "arm")
-    echo "armv7" # Super best effort - TODO: find useful way to split armv6/armv7 maybe
-    ;;
-  "aarch64" | "arm64")
-    echo "arm64"
+  "linux")
+    echo "unknown-linux-musl"
     ;;
   *)
     exit 1
