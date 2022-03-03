@@ -1,9 +1,9 @@
 <div align="center">
 
-# asdf-awsls [![Build](https://github.com/chessmango/asdf-awsls/actions/workflows/build.yml/badge.svg)](https://github.com/chessmango/asdf-awsls/actions/workflows/build.yml) [![Lint](https://github.com/chessmango/asdf-awsls/actions/workflows/lint.yml/badge.svg)](https://github.com/chessmango/asdf-awsls/actions/workflows/lint.yml)
+# asdf-zellij [![Build](https://github.com/chessmango/asdf-zellij/actions/workflows/build.yml/badge.svg)](https://github.com/chessmango/asdf-zellij/actions/workflows/build.yml) [![Lint](https://github.com/chessmango/asdf-zellij/actions/workflows/lint.yml/badge.svg)](https://github.com/chessmango/asdf-zellij/actions/workflows/lint.yml)
 
 
-[awsls](https://github.com/jckuester/awsls) plugin for the [asdf version manager](https://asdf-vm.com).
+[zellij](https://github.com/zellij-org/zellij) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
@@ -24,23 +24,23 @@
 Plugin:
 
 ```shell
-asdf plugin add awsls https://github.com/chessmango/asdf-awsls.git
+asdf plugin add zellij https://github.com/chessmango/asdf-zellij.git
 ```
 
-awsls:
+zellij:
 
 ```shell
 # Show all installable versions
-asdf list-all awsls
+asdf list-all zellij
 
 # Install specific version
-asdf install awsls latest
+asdf install zellij latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global awsls latest
+asdf global zellij latest
 
-# Now awsls commands are available
-awsls --version
+# Now zellij commands are available
+zellij --version
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
@@ -50,7 +50,7 @@ install & manage versions.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/chessmango/asdf-awsls/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/chessmango/asdf-zellij/graphs/contributors)!
 
 # License
 

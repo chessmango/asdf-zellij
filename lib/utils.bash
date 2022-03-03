@@ -2,9 +2,9 @@
 
 set -euo pipefail
 
-GH_REPO="https://github.com/jckuester/awsls"
-TOOL_NAME="awsls"
-TOOL_TEST="awsls --version"
+GH_REPO="https://github.com/zellij-org/zellij"
+TOOL_NAME="zellij"
+TOOL_TEST="zellij --version"
 
 fail() {
   echo -e "asdf-$TOOL_NAME: $*"
@@ -13,7 +13,7 @@ fail() {
 
 curl_opts=(-fsSL)
 
-# NOTE: You might want to remove this if awsls is not hosted on GitHub releases.
+# NOTE: You might want to remove this if zellij is not hosted on GitHub releases.
 if [ -n "${GITHUB_API_TOKEN:-}" ]; then
   curl_opts=("${curl_opts[@]}" -H "Authorization: token $GITHUB_API_TOKEN")
 fi
