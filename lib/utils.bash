@@ -70,7 +70,19 @@ install_version() {
 }
 
 get_arch() {
-  uname -m
+  local arch
+  arch=$(uname -m)
+  case $arch in
+  "x86_64")
+    echo "x86_64"
+    ;;
+  "arm64")
+    echo "aarch64"
+    ;;
+  *)
+    exit 1
+    ;;
+  esac
 }
 
 get_platform() {
